@@ -35,7 +35,7 @@ def index():
     students = Student.query.all()
     return render_template('index.html', students=students)
 
-@app.route('/int:<student_id>/')
+@app.route('/<int:student_id>/')
 def student(student_id):
     student = Student.query.get_or_404(student_id)
     return render_template('student.html', student=student)
